@@ -1,6 +1,7 @@
 #pragma once
 #include "Cuadrado.h"
 #include "TrianguloE.h"
+#include "PRegulares.h"
 namespace LabMelissaMansilla {
 
 	using namespace System;
@@ -50,6 +51,8 @@ namespace LabMelissaMansilla {
 	private: System::Windows::Forms::Button^  BtnCalcCua;
 	private: System::Windows::Forms::Button^  BtnCalcTrian;
 	private: System::Windows::Forms::Button^  btnCalcPoli;
+	private: System::Windows::Forms::TextBox^  TBApotema;
+	private: System::Windows::Forms::Label^  label5;
 
 	private:
 		/// <summary>
@@ -79,6 +82,8 @@ namespace LabMelissaMansilla {
 			this->BtnCalcCua = (gcnew System::Windows::Forms::Button());
 			this->BtnCalcTrian = (gcnew System::Windows::Forms::Button());
 			this->btnCalcPoli = (gcnew System::Windows::Forms::Button());
+			this->TBApotema = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -199,12 +204,31 @@ namespace LabMelissaMansilla {
 			this->btnCalcPoli->TabIndex = 12;
 			this->btnCalcPoli->Text = L"Calcular";
 			this->btnCalcPoli->UseVisualStyleBackColor = true;
+			this->btnCalcPoli->Click += gcnew System::EventHandler(this, &MyForm::btnCalcPoli_Click);
+			// 
+			// TBApotema
+			// 
+			this->TBApotema->Location = System::Drawing::Point(735, 311);
+			this->TBApotema->Name = L"TBApotema";
+			this->TBApotema->Size = System::Drawing::Size(100, 26);
+			this->TBApotema->TabIndex = 14;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(731, 288);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(78, 20);
+			this->label5->TabIndex = 13;
+			this->label5->Text = L"Apotema:";
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(832, 471);
+			this->ClientSize = System::Drawing::Size(945, 471);
+			this->Controls->Add(this->TBApotema);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->btnCalcPoli);
 			this->Controls->Add(this->BtnCalcTrian);
 			this->Controls->Add(this->BtnCalcCua);
@@ -227,12 +251,22 @@ namespace LabMelissaMansilla {
 		}
 #pragma endregion
 	private: System::Void BtnCalcTrian_Click(System::Object^  sender, System::EventArgs^  e) {
-		TrianguloE *obj = gcnew TrianguloE();
-		obj->DefinirLado =  int::Parse(TBTrianL->Text);
-		MessageBox::Show("El area del triangulo es: " + obj->ObArea().ToString() + "El perimetro del trinagulo es: " + obj->ObPerimetro().ToString());
-
+		TrianguloE *obj = new TrianguloE();
+		double largo =  Convert::ToDouble(TBTrianL->Text);
+		MessageBox::Show("Área del triángulo: " + obj->ObArea(largo).ToString() + "\nPerímetro del triángulo: " + obj->ObPerimetro(largo).ToString());
+	
 	}
 private: System::Void BtnCalcCua_Click(System::Object^  sender, System::EventArgs^  e) {
+		Cuadrado *obj = new Cuadrado();
+		double largo = Convert::ToDouble(TBCuadroL->Text);
+		MessageBox::Show("Área del triángulo: " + obj->ObArea(largo).ToString() + "\nPerímetro del triángulo: " + obj->ObPerimetro(largo).ToString());
+}
+private: System::Void btnCalcPoli_Click(System::Object^  sender, System::EventArgs^  e) {
+	PRegulares* pol = new PRegulares();
+	double lados = Convert::ToDouble(TBPolL->Text);
+	double NoLados = Convert::ToDouble(TBPolNL->Text);
+	double Apotema = Convert::ToDouble(TBApotema->Text);
+	MessageBox::Show("Área del Polígono: " + pol->ObArea(lados, NoLados, Apotema).ToString() + "\nPerímetro del polígono: " + pol->ObPerimetro(lados, lados).ToString());
 
 }
 };

@@ -30,6 +30,12 @@
     <ClCompile Include="Poligono2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PoligonosR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PRegulares.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -47,5 +53,16 @@
     <ClInclude Include="Poligono2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PoligonosR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PRegulares.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

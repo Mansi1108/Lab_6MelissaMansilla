@@ -137,6 +137,8 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Poligono.cpp" />
     <ClCompile Include="Poligono2.cpp" />
+    <ClCompile Include="PoligonosR.cpp" />
+    <ClCompile Include="PRegulares.cpp" />
     <ClCompile Include="TrianguloE.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +148,8 @@
     </ClInclude>
     <ClInclude Include="Poligono.h" />
     <ClInclude Include="Poligono2.h" />
+    <ClInclude Include="PoligonosR.h" />
+    <ClInclude Include="PRegulares.h" />
     <ClInclude Include="TrianguloE.h" />
   </ItemGroup>
   <ItemGroup>

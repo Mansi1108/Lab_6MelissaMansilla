@@ -5,8 +5,8 @@ public:
 	Poligono2();
 	~Poligono2();
 public:
-	virtual double ObtenerArea() = 0; 
-	virtual double ObtenerPerimetro() = 0;
+	virtual double ObArea(double largo); 
+	virtual double ObPerimetro(double largo);
 	void DefinirLado(double l) {Lado = l;}
 protected:
 	double Lado;

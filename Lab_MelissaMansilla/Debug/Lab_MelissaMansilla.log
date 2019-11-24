@@ -1,0 +1,11 @@
+﻿  Cuadrado.cpp
+  MyForm.cpp
+  Poligono.cpp
+  Poligono2.cpp
+  PoligonosR.cpp
+  PRegulares.cpp
+  TrianguloE.cpp
+  Generating Code...
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+  Cuadrado.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Lab_MelissaMansilla.vcxproj -> D:\Mansilla\URL\PrograAvanzada\Lab_MelissaMansilla\Debug\Lab_MelissaMansilla.exe

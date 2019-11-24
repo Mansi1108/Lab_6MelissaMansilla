@@ -6,7 +6,7 @@ public:
 	TrianguloE();
 	~TrianguloE();
 public:
-	double ObArea();
-	double ObPerimetro();
+	double ObArea(double lado);
+	double ObPerimetro(double lado);
 };
 
